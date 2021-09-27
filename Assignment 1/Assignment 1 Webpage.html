@@ -35,17 +35,23 @@
                 font-size: 25px;
                 color: black;
                 font-weight: bold;
-                width: 10%;
                 list-style-type: none;
-                margin: 0;
+                margin-left: 7%;
                 overflow: hidden;
                 padding: 0;
             }
 
-            li {
+            .liBorder {
                 display: inline;
                 float: left;
-                border-right: 1px solid #bbb;
+                border-right: 10px solid grey;
+                width: 23%;
+            }
+
+            .liNoBorder {
+                display: inline;
+                float: left;
+                width: 23%;
             }
 
             li a {
@@ -55,6 +61,7 @@
                 padding: 14px 16px;
                 text-decoration: none;
                 background-color: rgb(183, 85, 202);
+                filter: none;
             }
 
             li a:hover {
@@ -120,12 +127,21 @@
 
     <body>
 
-        <ul>
-            <li><a class="active" href="#About Me">About Me</a></li>
-            <li><a href="#Career">Career</a></li>
-            <li><a href="#Hobbies">Hobbies</a></li>
-            <li><a href="#Contact Info">Contact Info</a></li>
-        </ul>
+        <div>
+
+            <ul>
+
+                <li class="liBorder"><a class="active" href="#About Me" >About Me</a></li>
+
+                <li class="liBorder"><a href="#Career">Career</a></li>
+
+                <li class="liBorder"><a href="#Hobbies">Hobbies</a></li>
+
+                <li class="liNoBorder"><a href="#Contact Info">Contact Info</a></li>
+
+            </ul>
+
+        </div>
 
         <h1 style="text-align: center;">Hi, I'm Brad Hunter!</h1>
 

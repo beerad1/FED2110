@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>Telmi</title>
+        <link rel="stylesheet" href="Dashboard.css">
+
+    </head>
+
+    <body>
+
+        <div id="newPost">
+            <a href="" alt="Make New Post">
+                <img id="newPostIcon" src="New Post Icon.png" alt="Make New Post">
+            </a>
+        </div>
+    
+        <!--This is the Top banner-->
+        <section id="topBanner">
+                
+            <h1 id="dashLogo">Telmi</h1>
+
+            <div id="dividerLine"></div>
+
+            <h3 id="dashText">Jane Doe</h3>
+
+            <div id="topBannerSpacer"></div>
+
+            <div><span id="profImgTop"></span></div>
+
+        </section>
+
+        <!--This section container just makes sure the center sections stay oriented as a row-->
+        <section id="mainSection">
+
+            <!--This is the Left side banner-->
+            <section id="leftBanner">
+                
+                <!--This is the Profile Info section-->
+                <section>
+
+                    <!--Prof/Name/Handle bundle-->
+                    <div id="pnhBundle">
+
+                        <div><span id="profImgLeft"></span></div>
+
+                        <div>
+
+                            <div id="pnhNameText">Jane Doe</div>
+                            <div id="pnhHandText">@J.Doe</div>
+                            
+                        </div>
+                    
+                    </div>
+
+                    <p class="leftBannerText">Pensacola, FL, USA</p>
+                    
+                    <p class="leftBannerText"><strong>1432</strong> posts<strong>, 88 </strong>followers<strong>, 12 </strong>following</p>
+
+                </section>
+
+                <div class="dividerBanner"></div>
+
+                <!--This is the Left Menu section-->
+                <section id="leftMenu">
+                    
+                    <a href="" alt="Telmi - Home">
+                        <input type="button" class="buttonLeftMenu" value="Home">
+                    </a>
+
+                    <a href="" alt="Telmi - Explore">
+                        <input type="button" class="buttonLeftMenu" value="Explore">
+                    </a>
+
+                    <a href="" alt="Telmi - Favorites">
+                        <input type="button" class="buttonLeftMenu" value="Favorites">
+                    </a>
+                    
+                    <a href="" alt="Telmi - Stats">
+                        <input type="button" class="buttonLeftMenu" value="Stats">
+                    </a>
+
+                    <a href="" alt="Telmi - Settings">
+                        <input type="button" class="buttonLeftMenu" value="Settings">
+                    </a>
+
+                </section>
+
+                <div class="dividerBanner"></div>
+
+                <!--This is the Top Follows section-->
+                
+                <section>
+
+                    <p id="topFollowsText">Top Follows</p>
+
+                    <div id="followGrid">
+
+                        <div class="followCell"><span class="profImgFollow"></span></div>
+
+                        <div class="followCell">
+                            <div class="pnhNameTextFollow">Ed Rick</div>
+                        </div>
+
+                        <div class="followCell">
+                            <div class="pnhHandTextFollow">@E.Rick</div>
+                        </div>
+
+                        <div class="followCell"><span class="profImgFollow"></span></div>
+
+                        <div class="followCell">
+                            <div class="pnhNameTextReply">Mark Bot</div>
+                        </div>
+
+                        <div class="followCell">
+                            <div class="pnhHandTextReply">@M.Bot</div>
+                        </div>
+
+                        <div class="followCell"><span class="profImgFollow"></span></div>
+
+                        <div class="followCell">
+                            <div class="pnhNameTextReply">Jim Bo</div>
+                        </div>
+
+                        <div class="followCell">
+                            <div class="pnhHandTextReply">@J.Bo</div>
+                        </div>
+
+                    </div>
+
+                </section>
+                
+
+            </section>
+
+            <!--This is the Post section, using grid-->
+            <section id="postGrid">
+
+                <div class="postCell"></div>
+
+                <!--This is the Feed section-->
+                <section class="postCell">
+                
+                    <div id="textPostField">
+
+                        <div class="pnhBundlePost">
+
+                            <div><span class="profImgPost"></span></div>
+    
+                            <div class="pnhNameTextPost">Jane Doe</div>
+    
+                            <div class="pnhHandTextPost">@J.Doe</div>
+
+                        
+                        </div>
+
+                        <input type="text" name="postField" placeholder="Telmi anything!">
+
+                        <a href="" alt="Post to Telmi">
+                            <input type="button" id="postButton" value="Telmi!">
+                        </a>
+
+                    </div>
+
+                    <div id="dividerPost"></div>
+
+                    <div class="textPostBlock">
+
+                        <a class="elipMenu" href="" alt="Post Menu">
+
+                            <div class="elipses"></div>
+                            <div class="elipses"></div>
+                            <div class="elipses"></div>
+
+                        </a>
+
+                        <div class="pnhBundlePost">
+
+                            <div><span class="profImgPost"></span></div>
+    
+                            <div class="pnhNameTextPost">Jane Doe</div>
+    
+                            <div class="pnhHandTextPost">@J.Doe</div>
+                        
+                        </div>
+
+                        <p class="postText">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Quidem in eum repellat facere velit veniam voluptas maiores, 
+                            harum magnam deserunt officia vero, distinctio deleniti 
+                            perferendis, esse totam quae vitae. Pariatur!
+                        </p>
+
+                        <div class="postFooter">
+
+                            <a href="" alt="Like Post">
+                                <img class="postIcons" src="heart icon.png" alt="Like Post">
+                            </a>
+
+                            <p class="postIconsText">17.1k</p>
+
+                            <a href="" alt="Share Post">
+                                <img class="postIcons" src="share icon.png" alt="Share Post">
+                            </a>
+
+                            <p class="postIconsText">101</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="textPostBlock">
+
+                        <a class="elipMenu" href="" alt="Post Menu">
+
+                            <div class="elipses"></div>
+                            <div class="elipses"></div>
+                            <div class="elipses"></div>
+
+                        </a>
+
+                        <div class="pnhBundlePost">
+
+                            <div><span class="profImgPost"></span></div>
+    
+                            <div class="pnhNameTextPost">Jane Doe</div>
+    
+                            <div class="pnhHandTextPost">@J.Doe</div>
+                        
+                        </div>
+
+                        <img id="postImg" src="skyline.png" alt="Image Post">
+
+                        <div class="postFooter">
+
+                            <a href="" alt="Like Post">
+                                <img class="postIcons" src="heart icon.png" alt="Like Post">
+                            </a>
+
+                            <p class="postIconsText">17.1k</p>
+
+                            <a href="" alt="Share Post">
+                                <img class="postIcons" src="share icon.png" alt="Share Post">
+                            </a>
+
+                            <p class="postIconsText">101</p>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="textPostBlock">
+
+                        <a class="elipMenu" href="" alt="Post Menu">
+
+                            <div class="elipses"></div>
+                            <div class="elipses"></div>
+                            <div class="elipses"></div>
+
+                        </a>
+
+                        <div class="pnhBundlePost">
+
+                            <div><span class="profImgPost"></span></div>
+    
+                            <div class="pnhNameTextPost">Jane Doe</div>
+    
+                            <div class="pnhHandTextPost">@J.Doe</div>
+                        
+                        </div>
+
+                        <p class="postText">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Quidem in eum repellat facere velit veniam voluptas maiores, 
+                            harum magnam deserunt officia vero, distinctio deleniti 
+                            perferendis, esse totam quae vitae. Pariatur!
+                        </p>
+
+                        <div class="postFooter">
+
+                            <a href="" alt="Like Post">
+                                <img class="postIcons" src="heart icon.png" alt="Like Post">
+                            </a>
+
+                            <p class="postIconsText">17.1k</p>
+
+                            <a href="" alt="Share Post">
+                                <img class="postIcons" src="share icon.png" alt="Share Post">
+                            </a>
+
+                            <p class="postIconsText">101</p>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                </section>
+
+                <div class="postCell"></div>
+
+            </section>
+
+            <!--This is the Right side banner-->
+            <section id="rightBanner">
+
+                <!--This is the Reply section-->
+
+                <section id="reply">
+
+                    <p id="replyText">Reply</p>
+
+                    <div id="replyGrid">
+
+                        <div class="replyCell"><span class="profImgReply"></span></div>
+
+                        <div class="replyCell">
+                            <div class="pnhNameTextReply">Ed Rick</div>
+                        </div>
+
+                        <div class="replyCell">
+                            <div class="pnhHandTextReply">@E.Rick</div>
+                        </div>
+
+                        <div class="replyCell"><span class="profImgReply"></span></div>
+
+                        <div class="replyCell">
+                            <div class="pnhNameTextReply">Mark Bot</div>
+                        </div>
+
+                        <div class="replyCell">
+                            <div class="pnhHandTextReply">@M.Bot</div>
+                        </div>
+
+                        <div class="replyCell"><span class="profImgReply"></span></div>
+
+                        <div class="replyCell">
+                            <div class="pnhNameTextReply">Jim Bo</div>
+                        </div>
+
+                        <div class="replyCell">
+                            <div class="pnhHandTextReply">@J.Bo</div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <div class="dividerBanner"></div>
+
+                <section id="trending">
+
+                    <p id="trendingText">Trending</p>
+
+                    <div id="trendingGrid">
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - FFXIV">
+                                <input type="button" class="buttonTrending" value="FFXIV">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - Cats">
+                                <input type="button" class="buttonTrending" value="Cats">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - Discord">
+                                <input type="button" class="buttonTrending" value="Discord">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - Steam">
+                                <input type="button" class="buttonTrending" value="Steam">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - Joji">
+                                <input type="button" class="buttonTrending" value="Joji">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - Gorillaz">
+                                <input type="button" class="buttonTrending" value="Gorillaz">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - Technology">
+                                <input type="button" class="buttonTrending" value="Technology">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - Health">
+                                <input type="button" class="buttonTrending" value="Health">
+                            </a>
+                        </div>
+
+                        <div class="trendingCell">
+                            <a href="" alt="Trending - HTML/CSS">
+                                <input type="button" class="buttonTrending" value="HTML/CSS">
+                            </a>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <div class="dividerBanner"></div>
+
+                <!--This is the Site Menu-->
+                <section id="siteMenuLinks">
+                        
+                    <a href="" alt="Telmi - About">
+                        <input type="button" class="buttonRightMenu" value="About">
+                    </a>
+
+                    <a href="" alt="Telmi - Accessibility">
+                        <input type="button" class="buttonRightMenu" value="Accessibility">
+                    </a>
+
+                    <a href="" alt="Telmi - Customer Support">
+                        <input type="button" class="buttonRightMenu" value="Customer Support">
+                    </a>
+
+                    <a href="" alt="Telmi - Privacy of Terms">
+                        <input type="button" class="buttonRightMenu" value="Privacy of Terms">
+                    </a>
+
+                    <a href="" alt="Telmi - Contact Us">
+                        <input type="button" class="buttonRightMenu" value="Contact Us">
+                    </a>
+                
+                </section>
+
+            </section>
+
+    </body>
+    
+</html>

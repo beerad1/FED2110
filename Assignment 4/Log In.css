@@ -1,0 +1,361 @@
+    /*This is the standard layout for the class attributes below.
+        padding: ;
+        margin-top: ;
+        margin-bottom: ;
+        font-family: ;
+        display: ;
+        flex-direction: ;
+        justify-content: ;
+        align-items: ;
+        width: ;
+        height: ;
+        color: ;
+        text-align: ;
+        background: ;
+        background-color: ;
+        border: ;
+        src: ;
+    */   
+    
+@font-face {
+    font-family: Inter-Regular;
+    src: url('Inter/static/Inter-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: Inter-Medium;
+    src: url('Inter/static/Inter-Medium.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: Inter-SemiBold;
+    src: url('Inter/static/Inter-SemiBold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: Inter-Bold;
+    src: url('Inter/static/Inter-Bold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: Inter-ExtraBold;
+    src: url('Inter/static/Inter-ExtraBold.ttf')  format('truetype');
+}
+
+@media only screen and (max-width: 719px) {
+    
+    a {
+        text-decoration: none; 
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #355899;
+    }
+
+    label {
+        margin-left: 2vw;
+    }
+
+    input[type=text], select {
+        width: 100vw;
+        padding: 12px 20px;
+        margin: 1vh 0;
+        display: inline-block;
+        font-family: Inter-Medium;
+        font-size: 3vw;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    .buttonRightBanner {
+        padding: 0;
+        margin-top: 2vh;
+        width: 40vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 8vw;
+        color: #B9C1D6;
+        background-color: #222222;
+        border: none;
+    }
+
+    #loginLogo {
+        padding: 0;
+        margin: 0;
+        font-family: Inter-ExtraBold;
+        font-size: 30vw;
+    }
+ 
+    #loginText {
+        padding: 0;
+        margin: 0;
+        font-family: Inter-Medium;
+        font-size: 8vw;
+        display: inline-block;
+        text-align: left;
+    }
+
+    #mainSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #middleSection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #dividerLine {
+        padding: 0;
+        margin-bottom: 4vh;
+        height: 1vh;
+        width: 70vw;
+        background-color: #B9C1D6;
+    }
+
+    #leftBannerSpacer {
+        display: none;
+    }
+
+    #leftBanner {
+        margin-bottom: 7vh;
+        font-family: Inter-Medium;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 40vh;
+        color: #4D82B4;
+        text-align: center;
+        background-color: #222222;
+    }
+
+    #middleSpacer {
+        display: none;
+    }
+
+    #leftSpacer {
+        display: none;
+    }
+
+    #rightBanner {
+        margin-bottom: 12vh;
+        font-family: Inter-Regular;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100vw;
+        height: 46vh;
+        color: #222222;
+        text-align: left;
+        background-color: #4D82B4;
+    }
+
+    #buttonForgot {
+        padding: 0;
+        font-family: Inter-SemiBold;
+        font-size: 4vw;
+        color: #222222;
+        text-decoration: none;
+        background-color: #4D82B4;
+        border: none;
+    }
+
+    #footer {
+        padding: 0;
+        margin: 0;
+        font-family: Inter-Regular;
+        font-size: 1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 10vh;
+        color: #B9C1D6;
+        text-align: center;
+        background-color: #222222;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    
+    a {
+        text-decoration: none; 
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #355899;
+    }
+
+    label {
+        font-size: 1.5vw;
+    }
+
+    input[type=text], select {
+        width: 40vw;
+        padding: 12px 20px;
+        margin: 1vh 0;
+        display: inline-block;
+        font-family: Inter-Medium;
+        font-size: 1.3vw;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    .buttonRightBanner {
+        padding: 0;
+        margin-top: 2vh;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #B9C1D6;
+        background-color: #222222;
+        border: none;
+    }
+
+    .buttonRightBanner:hover {
+        padding: 0;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #222222;
+        background-color: #B9C1D6;
+        border: none;
+    }
+
+    .buttonFooter {
+        padding: 0;
+        font-family: Inter-Regular;
+        font-size: 1vw;
+        color: #B9C1D6;
+        text-align: center;
+        background: none;
+        border: none;
+    }
+
+    .buttonFooter:hover {
+        padding: 0;
+        font-family: Inter-Regular;
+        font-size: 1vw;
+        color: #B9C1D6;
+        text-align: center;
+        text-decoration: underline;
+        background: none;
+        border: none;
+    }
+
+    #loginLogo {
+        padding: 0;
+        margin: 0;
+        font-family: Inter-ExtraBold;
+        font-size: 5vw;
+    }
+
+    #loginText {
+        padding: 0;
+        margin: 0;
+        font-family: Inter-Medium;
+        font-size: 2vw;
+        display: inline-block;
+        text-align: left;
+    }
+
+    #mainSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #middleSection {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #dividerLine {
+        height: 10vh;
+        width: .50vw;
+        background-color: #B9C1D6;
+    }
+
+    #leftBannerSpacer {
+        justify-content: center;
+        width: 23vw;
+        height: 35vh;
+        text-align: center;
+        background-color: none;
+    }
+
+    #leftBanner {
+        margin-top: 15vh;
+        margin-right: 25vw;
+        font-family: Inter-Medium;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 60vw;
+        height: 13vh;
+        color: #4D82B4;
+        text-align: center;
+        background-color: #222222;
+    }
+
+    #middleSpacer {
+        width: 20vw;
+        height: 10vh;
+        background-color: none;
+    }
+
+    #leftSpacer {
+        width: 55vw;
+        height: 10vh;
+        background-color: none;
+    }
+
+    #rightBanner {
+        margin-bottom: 12vh;
+        font-family: Inter-Regular;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 45vw;
+        height: 40vh;
+        color: #222222;
+        text-align: left;
+        background-color: #4D82B4;
+    }
+
+    #buttonForgot {
+        padding: 0;
+        font-family: Inter-SemiBold;
+        font-size: 1.5vw;
+        color: #222222;
+        background-color: #4D82B4;
+        border: none;
+    }
+
+    #footer {
+        padding: 0;
+        margin: 0;
+        font-family: Inter-Regular;
+        font-size: 1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 10vh;
+        color: #B9C1D6;
+        text-align: center;
+        background-color: #222222;
+    }
+}

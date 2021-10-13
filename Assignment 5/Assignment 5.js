@@ -41,9 +41,9 @@ function loadBooks(bookLoadInst) {
   });
 }
 
-// probably shouldn't use new in the name, but it helps me remember
-var bookNewInst = new Bookshelf();
-loadBooks(bookNewInst);
+// changed name to bookShowInst to help readability
+var bookShowInst = new Bookshelf();
+loadBooks(bookShowInst);
 
 var BOOK_API = "https://some.url/api";
 

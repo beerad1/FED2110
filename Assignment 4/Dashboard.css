@@ -671,7 +671,7 @@
     #followGrid {
         display: grid;
         grid-template-rows: 1fr 2fr 1fr;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
     }
 
     #topFollowsText {
@@ -692,8 +692,9 @@
 
     #postGrid {
         display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 8fr) minmax(0, 1fr);
         width: 60vw;
-        grid-template-columns: 1fr 8fr 1fr;
+        overflow: hidden;
     }
 
     #postButton {
@@ -762,7 +763,7 @@
     #replyGrid {
         display: grid;
         grid-template-rows: 1fr 2fr 1fr;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
     }
 
     #trendingText {
@@ -785,7 +786,7 @@
     #trendingGrid {
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     }
 
     #siteMenuLinks {

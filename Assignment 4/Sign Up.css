@@ -190,29 +190,18 @@
     }
 
     label {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
     }
 
     input[type=text], select {
         width: 40vw;
-        padding: 12px 20px;
-        margin: 1vh 0;
+        padding: 10px 10px;
+        margin: .7vh 0;
         display: inline-block;
         font-family: Inter-Medium;
         font-size: 1.2vw;
         border: 1px solid #ccc;
         box-sizing: border-box;
-    }
-
-    .buttonBottomBanner:hover {
-        padding: 0;
-        width: 25vw;
-        height: 8vh;
-        font-family: Inter-SemiBold;
-        font-size: 2vw;
-        color: #222222;
-        background-color: #B9C1D6;
-        border: none;
     }
 
     .buttonFooter {
@@ -245,6 +234,18 @@
         font-size: 2vw;
         color: #B9C1D6;
         background-color: #222222;
+        border: none;
+    }
+
+    #buttonBottomBanner:hover {
+        padding: 0;
+        margin-top: 2vh;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #222222;
+        background-color: #B9C1D6;
         border: none;
     }
 

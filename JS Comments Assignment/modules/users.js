@@ -21,6 +21,7 @@ export class CreateUser {
 
 // This function passess the user and postId when executed in the posts.js file, after being called in main.js, to display the name and username.
 export function displayUserOnPost(user, postId) {
+    // The .html() gets the first html element that matches the information in the "$()". These are finding the fullname and username ids and inserting the user's name and username from the post object.
     $(`#fullname${postId}`).html(user.name);
     // The @ symbol is preplaced in this .html().
     $(`#username${postId}`).html(`@${user.username}`);

@@ -14,8 +14,14 @@ export function displayPosts(posts) {
             <section class="card__title">
                 <div class="profile-circle"></div>
                 <div class="card__title--name">
+
+
+                    <!-- getUser is passed the userId the function displayUserOnPost, and the post id to be able to display the user's name, and their username on the post card. -->
+
+
                     <h4 class="card__title--full-name" id="fullname${post.id}">${getUser(post.userId, displayUserOnPost, post.id)}</h4>
                     <p class="card__title--username" id="username${post.id}">${getUser(post.userId, displayUserOnPost, post.id)}</p>
+                    
                 </div>
             </section>
             <section class="card__body">
@@ -37,6 +43,7 @@ export function displayPosts(posts) {
     newsfeedSection.addEventListener('click', (event) => {
         // If statement confirms the click target is the delete button.
         if(event.target && event.target.matches(".delete-btn")) {
+            // This searches for the closest parent above the edit button that is a fieldset tag, and identifies the postId from that tag's id.
             const postId = event.target.closest("fieldset").id;
             // If true, the function is executed with the postId argument.
             deletePost(postId);
@@ -47,6 +54,7 @@ export function displayPosts(posts) {
     newsfeedSection.addEventListener('click', (event) => {
         // If statement confirms the click target is the edit button.
         if(event.target && event.target.matches(".edit-btn")) {
+            // This searches for the closest parent above the edit button that is a fieldset tag, and identifies the postId from that tag's id.
             const postId = event.target.closest("fieldset").id;
             // If true, the function will be executed with the postId argument. Currently, it returns the postId to the console.
             console.log(postId);

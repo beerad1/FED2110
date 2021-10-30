@@ -1,0 +1,146 @@
+body {
+    background-color:  #f9f9f9;
+    font-family: 'Archivo', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* main styles for all app | MOBILE */
+.app-bar {
+    background-color:rgb(144, 106, 163);
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+    text-align: center;
+    min-height: max-content;
+    height: 10vh;
+}
+
+.app-bar__title {
+    color: #ffff;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: larger;
+}
+
+.profile-circle {
+    background-color: #C4C4C4;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
+
+.sidebar {
+    display: none;
+}
+
+.app-area {
+    background-color:inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem;
+    height: 80vh;
+    overflow: scroll;
+}
+
+.newsfeed {
+    display: none;
+    flex-direction: column;
+}
+
+.new-post {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 1rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1rem;
+}
+
+.card__title {
+    display: grid;
+    grid-template-columns:  4rem auto auto;
+    align-items: center;
+    padding: 0.5em 0 0 0.5em;
+
+    
+}
+
+.card__title--username {
+    font-size: smaller;
+}
+
+.card__title--full-name, .card__title--username {
+    margin: 0;
+}
+
+.card__body {
+    padding: 0.5em;
+
+}
+
+.card__footer {
+    color: #f5f5f5;
+    background-color: rgb(144, 106, 163);
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    padding: 0.5em;
+   
+}
+
+.like-icon, .comment-icon {
+    display: inline-block;
+    margin: 0 0.5em;
+    
+}
+
+.post-btn-group {
+    border: none;
+    margin-left: auto;
+    padding: 0;
+}
+.post-date {
+    display: inline-block;
+    grid-column-start: -1;
+    text-align: end;
+    margin: 0.5em;
+}
+
+#new-post-text {
+    border: none;
+    border-radius: 30px;
+    grid-column: 1/-2;
+    padding: 1em;
+    margin-right: 5em;
+    resize: none;
+    width: 90%;
+}
+
+#post-btn {
+    background-color: rgb(144, 106, 163);
+    border: none;
+    border-radius: 50%;
+    color: #f5f5f5;
+    cursor: pointer;
+    font-family: 'Archivo Black', sans-serif;
+    grid-column: -1/-2;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 2em;
+
+}
+
+#new-post-text, #post-btn {
+    grid-row: 1/2;
+}
+
+footer {
+    background-color:rgb(144, 106, 163);
+    height: 5.5vh;
+}

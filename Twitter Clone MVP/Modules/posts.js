@@ -1,5 +1,5 @@
 // These functions import functions (getUser, deletePost, displayUserOnPost) from the ajax.js and users.js file.
-import { getUser, deletePost } from "./ajax.js";
+import { getUser, deletePost, editPost } from "./ajax.js";
 import { displayUserOnPost } from "./users.js";
 
 // This is the major function that iterates through a for loop and creates the post card for each post that will be displayed on screen. It takes the posts objects from the firebase, and uses the information therein to populate all relevant data throughout. It also contains the delete and edit functions for the posts.
@@ -53,6 +53,8 @@ export function displayPosts(posts) {
             const postId = event.target.closest("fieldset").id;
             // If true, the function will be executed with the postId argument. Currently, it returns the postId to the console.
             console.log(postId);
+
+            editPost();
         }
     })
 }

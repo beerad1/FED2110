@@ -1,22 +1,3 @@
-    /*This is the standard layout for the class attributes below.
-        padding: ;
-        margin-top: ;
-        margin-bottom: ;
-        font-family: ;
-        display: ;
-        flex-direction: ;
-        justify-content: ;
-        align-items: ;
-        width: ;
-        height: ;
-        color: ;
-        text-align: ;
-        background: ;
-        background-color: ;
-        border: ;
-        src: ;
-    */   
-    
 @font-face {
     font-family: Inter-Regular;
     src: url('Inter/static/Inter-Regular.ttf')  format('truetype');
@@ -34,7 +15,7 @@
 
 @font-face {
     font-family: Inter-Bold;
-       src: url('Inter/static/Inter-Bold.ttf')  format('truetype');
+    src: url('Inter/static/Inter-Bold.ttf')  format('truetype');
 }
 
 @font-face {
@@ -46,7 +27,7 @@
     
     a {
         text-decoration: none; 
-    }
+     }
  
     body {
         padding: 0;
@@ -54,154 +35,116 @@
         background-color: #355899;
     }
 
-    input[type=text], select {
-        width: 100vw;
-        padding: 12px 20px;
-        margin: 1vh 0;
-        display: inline-block;
-        font-family: Inter-Medium;
-        font-size: 3vw;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-
-    .buttonFooter {
+    #loginPageBtn {
         padding: 0;
-        font-family: Inter-Regular;
-        font-size: 1vw;
-        color: #B9C1D6;
-        text-align: center;
-        background: none;
-        border: none;
-    }
-
-    .buttonFooter:hover {
-        padding: 0;
-        font-family: Inter-Regular;
-        font-size: 1vw;
-        color: #B9C1D6;
-        text-align: center;
-        text-decoration: underline;
-        background: none;
-        border: none;
-    }
-
-    #buttonBottomBanner {
-        padding: 0;
-        width: 40vw;
-        height: 8vh;
+        width: 75vw;
+        height: 12vh;
         font-family: Inter-SemiBold;
-        font-size: 8vw;
-        color: #B9C1D6;
-        background-color: #222222;
+        font-size: 12vw;
+        color: #222222;
+        background-color: #4D82B4;
+        border: none;
+    }
+    
+    #signupPageBtn {
+        padding: 0;
+        width: 75vw;
+        height: 12vh;
+        font-family: Inter-SemiBold;
+        font-size: 12vw;
+        color: #222222;
+        background-color: #4D82B4;
         border: none;
     }
 
-    #signupLogo {
-        display:none;
+    #dashPage {
+        display: none;
     }
 
-    #signupText {
+    #signupPage {
+        display: none;
+    }
+
+    #loginPage {
+        display: none;
+    }
+ 
+    #homeLogo {
+        padding: 0;
+        margin: 0;
+        font-family: Inter-ExtraBold;
+        font-size: 30vw;
+    }
+ 
+    #homeText {
         padding: 0;
         margin: 0;
         font-family: Inter-Medium;
-        font-size: 10vw;
+        font-size: 8vw;
         display: inline-block;
         text-align: left;
     }
-
+ 
     #mainSection {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
+ 
     #dividerLine {
-        display: none;
+        padding: 0;
+        margin: 0;
+        height: 1vh;
+        width: 70vw;
+        background-color: #B9C1D6;
     }
-
-    #topBanner {
-        margin-bottom: 6vh;
+ 
+    #leftBanner {
+        margin-bottom: 5vh;
         font-family: Inter-Medium;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100vw;
-        height: 20vh;
+        height: 40vh;
         color: #4D82B4;
         text-align: center;
         background-color: #222222;
     }
-
-    #topLogo {
-        display: flex;
-        flex-direction: column;
-    }
-
+ 
     #middleSpacer {
         display: none;
     }
-
-    #bottomBanner {
+ 
+    #rightBanner {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: flex-start;
         width: 100vw;
-        height: 67vh;
-        font-family: Inter-Medium;
-        font-size: 4vw;
-        text-indent: 3vw;
+        height: 50vh;
         color: #222222;
-        text-align: left;
-        background-color: #4D82B4;
+        text-align: center;
+        background-color: none;
     }
-
-    #flexRow {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
+ 
     #footer {
         display: none;
     }
-
-    #footerLinks {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 80vw;
-    }
+ 
 }
 
 @media only screen and (min-width: 720px) {
-    
+
     a {
-        text-decoration: none; 
+       text-decoration: none; 
     }
- 
+
     body {
         padding: 0;
         margin: 0;
         background-color: #355899;
-    }
-
-    label {
-        font-size: 1.3vw;
-    }
-
-    input[type=text], select {
-        width: 40vw;
-        padding: 10px 10px;
-        margin: .7vh 0;
-        display: inline-block;
-        font-family: Inter-Medium;
-        font-size: 1.2vw;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
     }
 
     .buttonFooter {
@@ -225,9 +168,8 @@
         border: none;
     }
 
-    #buttonBottomBanner {
+    #loginPageBtn {
         padding: 0;
-        margin-top: 2vh;
         width: 25vw;
         height: 8vh;
         font-family: Inter-SemiBold;
@@ -237,9 +179,8 @@
         border: none;
     }
 
-    #buttonBottomBanner:hover {
+    #loginPageBtn:hover {
         padding: 0;
-        margin-top: 2vh;
         width: 25vw;
         height: 8vh;
         font-family: Inter-SemiBold;
@@ -249,14 +190,48 @@
         border: none;
     }
 
-    #signupLogo {
+    #signupPageBtn {
+        padding: 0;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #B9C1D6;
+        background-color: #222222;
+        border: none;
+    }
+
+    #signupPageBtn:hover {
+        padding: 0;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #222222;
+        background-color: #B9C1D6;
+        border: none;
+    }
+
+    #dashPage {
+        display: none;
+    }
+
+    #signupPage {
+        display: none;
+    }
+
+    #loginPage {
+        display: none;
+    }
+
+    #homeLogo {
         padding: 0;
         margin: 0;
         font-family: Inter-ExtraBold;
         font-size: 10vw;
     }
 
-    #signupText {
+    #homeText {
         padding: 0;
         margin: 0;
         font-family: Inter-Medium;
@@ -267,38 +242,31 @@
 
     #mainSection {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
     #dividerLine {
         padding: 0;
         margin: 0;
-        height: 20vh;
-        width: .75vw;
+        height: 1vh;
+        width: 27vw;
         background-color: #B9C1D6;
-    }
+      }
 
-    #topBanner {
-        margin-top: 0vh;
-        margin-left: 25vw;
-        margin-right: 25vw;
-        margin-bottom: 5vh;
+    #leftBanner {
+        margin-top: 25vh;
+        margin-bottom: 25vh;
         font-family: Inter-Medium;
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        width: 50vw;
-        height: 25vh;
+        width: 40vw;
+        height: 40vh;
         color: #4D82B4;
         text-align: center;
         background-color: #222222;
-    }
-
-    #topLogo {
-        display: flex;
-        flex-direction: column;
     }
 
     #middleSpacer {
@@ -309,26 +277,18 @@
         background-color: none;
     }
 
-    #bottomBanner {
-        margin-top: 0vh;
-        margin-bottom: 0vh;
+    #rightBanner {
+        margin-top: 25vh;
+        margin-bottom: 25vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        width: 50vw;
-        height: 60vh;
-        font-family: Inter-Medium;
-        font-size: 1vw;
+        width: 40vw;
+        height: 40vh;
         color: #222222;
-        text-align: left;
+        text-align: center;
         background-color: #4D82B4;
-    }
-
-    #flexRow {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
     }
 
     #footer {
@@ -354,4 +314,5 @@
         align-items: center;
         width: 80vw;
     }
+
 }

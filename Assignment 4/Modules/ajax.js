@@ -204,3 +204,20 @@ export function deletePost(postId) {
         error: err => console.log(err)
     })
 };
+
+// This exported function allows for posts to be deleted from the firebase, and summarily from the newsfeed section.
+export function editPost(postId) {
+    // This ajax call executes the delete request, of the targeted post based on the postId.
+    $.ajax({
+        // Declares PATCH type HTTP method.
+        type: "PATCH",
+        // Declares url from firebase to posts section, and thto the specific post by the postId.
+        url: `${baseUrl}posts/${postId}${ext}`,
+        // On success, the getPosts callback function is executed to displayPosts. Shows the newsfeed after deleting without a refresh, so as to prevent the user from having to log back in.
+        success: () => {
+            getPosts(displayPosts);
+        },
+        // On fail, console.log the error.
+        error: err => console.log(err)
+    })
+};

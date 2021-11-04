@@ -6,6 +6,7 @@ import { displayPosts } from "./posts.js";
 // These variables break the filepath that will be used in conjuction with the firebase into the main body of the address, and the .json extension. While it is more characters to use string interpolation (`${ext}` vs. `.json`) in this instance, this is a good way to save time, should the appended info become longer in the future.
 const baseUrl = "https://ajax-crud-practice-fed2110-default-rtdb.firebaseio.com/";
 const ext = '.json';
+
 // This exported function takes the value of the text typed into the input tag with the name "email", and checks this value against all users in the firebase. If it exists, then it logs the user in. Otherwise it prints to console "User not found."
 export function loginUser(callback) {
     $.get({
@@ -15,13 +16,11 @@ export function loginUser(callback) {
         success: (response) => {
             // Sets $email to the value input through the email input tag.
             const $email = $("#loginEmail").val();
-            // Checks user for true or false, while preventing a null value in return using "!!".
-            const allUsers = response.filter((user) => !!user);
+            // Checks user for true or false, while preventing a null value in return using "!!". This was originally shoddy, but was fixed by the inclusion of hte "Object.values()" method to ensure that the data type matched the filter.
+            const allUsers = Object.values(response).filter((user) => !!user);
             // Checks through all existing usernames, and verifies that the one entered exists.
             const email = allUsers.find(user => user.email === $email);
-            console.log(email);
-            
-            // If/Else that displays in console whether the username was found to exist, or not.
+            // If/Else that returns the email to the callback function, changes the page CSS to the Dashboard, retrieves the post feed, and clears the #loginEmail input.
             if(email) {
                 // If user is found, execute callback with user as argument.
                 callback(email);
@@ -32,8 +31,9 @@ export function loginUser(callback) {
                 // This resets the form fields to be empty
                 $("#loginEmail").val("");
             }else{
-                // If user is not found.
-                $("#loginEmail").val("*User not found*");
+                // If user is not found, changes the contents of #loginEmail to empty, and alert "user not found".
+                $("#loginEmail").val("");
+                alert("User not found.");
             }
         }
     })
@@ -108,7 +108,7 @@ export function createPost(callback = console.log) {
         success: () => {
             getPosts(callback);
             // This resets the textarea so a new post can be created without having to delete the old text.
-            $("#new-post-text").val("");
+            $("#new-post-area").val("");
         },
         // On fail, console.log the error.
         error: err => console.log(err)
@@ -116,7 +116,7 @@ export function createPost(callback = console.log) {
 };
 
 // This exported function allows the creation of new posts using the value of #new-post-text, and the currentUser.
-export function createUser(callback = console.log) {
+export function createUser() {
     // This get will check teh provided new username against existing users, to ensure there are no duplicates created.
     $.get({
         // Instantiates the url of the firebase users section.
@@ -124,49 +124,41 @@ export function createUser(callback = console.log) {
         // Declares the success through an arrow function using the response.
         success: (response) => {
             // Sets each "$"variable to the corresponding input value.
-            // const $newName = String($("#newFirstName").val() + $("#newLastName").val());
+            const $newName = String($("#newFirstName").val() + " " + $("#newLastName").val());
             const $newUsername = $("#newUsername").val();
             const $newEmail = $("#newEmail").val();
-            const $newPassword = $("#newPassword").val();
             // Checks user for true or false, while preventing a null value in return using "!!".
-            const allUsers = response.filter((user) => !!user);
-            // Checks through all existing usernames, and verifies that the one entered exists.
-            // const newUsername = allUsers.find(user => user.username === $newUsername);
+            const allUsers = Object.values(response).filter((user) => !!user);
+            // Checks through all existing emails, and verifies that the one entered exists.
             const newEmail = allUsers.find(user => user.email === $newEmail);
-
-            console.log(String(allUsers));
-            console.log(String(newEmail));
             
             
             // If/Else that displays in console whether the username AND email were found to exist, or not. The user must be unique and these will cause conflicts down the line.
-            if(newEmail && newUsername) {
-
+            if(newEmail == undefined) {
                 // Uses guidGenerator to create uniqe id for the post object in firebase.
                 const newId = guidGenerator();
                 // Creates the new post object.
                 const newUser = {
                     // This declares that the new object will start as an empty object, and then be filled with the values from the above "$" variables
-                    [newUser]: {
+                    [newId]: {
                         email: $newEmail,
                         followers: getRandomInt(1000, 10000),
                         following: getRandomInt(15, 300),
                         id: newId,
-                        name: $name,
-                        username: $newUsername,
-                        password: $newPassword
+                        name: $newName,
+                        username: $newUsername
                     }
                 };
                 // Patches the new post to the firebase, using the firebase url for the posts section, and the stringified newPost object.
                 $.ajax({
                     type: "PATCH",
                     // Declares url from firebase to posts section.
-                    url: `${baseUrl}user${ext}`,
+                    url: `${baseUrl}users${ext}`,
                     // Converts to a json string, that can be interpreted.
                     data: JSON.stringify(newUser),
                     // On success, the getPosts function is executed to display the new post without a refresh, so as to prevent the user from having to log back in.
                     success: () => {
-                        console.log(newUser);
-                        getPosts(callback);
+                        $("#CSS")[0].setAttribute("href", "/CSS/Log In.css");
                         // This resets the textarea so a new post can be created without having to delete the old text.
                         $("#newFirstName").val("");
                         $("#newLastName").val("");
@@ -179,7 +171,7 @@ export function createUser(callback = console.log) {
                 })
                 
             }else{
-                $("#loginEmail").val(" *User not found* ");
+                alert("This email address is already in use. Please enter a new email address.");
             }
             
         },

@@ -1,0 +1,32 @@
+*************************************************************************
+Make all page load asynchronously through js
+	change css files to set each unloaded section to "display: none;"
+	change link to css to match the page css on asynch load of each page
+	create javascript to load each page after a click
+		home -> login = #loginPageBtn
+		home -> signup = #signupPageBtn
+		login -> dashboard = #loginBtn
+		signup -> login = #signupBtn
+*************************************************************************
+
+All of the above is complete! 
+
+*************************************************************************
+Complete page functionality
+	+ Home page goes to login and signup
+	+ Signup creates a new user with the provided info on clicking signup
+		- Patch to users section of firebase
+		- Go to login page after successful signup
+		- Add input sanitization?
+	+ Login checks for valid username (and password?)
+		- Go to dash on successful login
+	+ Dashboard
+		- Shows all posts
+		- Allows new post creation
+		- Allows post editing
+		- Allows post deletion
+*************************************************************************
+
+		
+
+

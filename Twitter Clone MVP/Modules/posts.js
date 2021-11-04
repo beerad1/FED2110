@@ -53,7 +53,7 @@ export function displayPosts(posts) {
             const postId = event.target.closest("fieldset").id;
             // If true, the function will be executed with the postId argument. Currently, it returns the postId to the console.
             console.log(postId);
-
+            // This executes the post edit command in ajax
             editPost();
         }
     })

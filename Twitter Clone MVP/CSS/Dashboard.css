@@ -1,4 +1,4 @@
-@font-face {
+  @font-face {
     font-family: Inter-Regular;
     src: url('Inter/static/Inter-Regular.ttf')  format('truetype');
 }
@@ -51,6 +51,7 @@
 
     .postCell {
         border: none;
+        grid-area: cell;
     }
 
     .pnhBundlePost {
@@ -156,6 +157,10 @@
     }
 
     #loginPage {
+        display: none;
+    }
+
+    #footer {
         display: none;
     }
 
@@ -285,20 +290,8 @@
         align-items: stretch;
         padding: 0;
         margin: 0;
+        height: 100vh;
         background-color: #494949;
-    }
-
-    input[type=text], select {
-        width: 48vw;
-        height: 8vh;
-        margin-left: 1vw;
-        display: inline-block;
-        font-family: Inter-Medium;
-        font-size: 1vw;
-        background-color: #B9C1D6;
-        border: none;
-        border-radius: 0 .5vw .5vw .5vw;
-        box-sizing: border-box;
     }
 
     textarea[type=text], select {
@@ -404,7 +397,7 @@
     }
 
     .pnhBundlePost {
-        margin-left: 1vw;
+        margin-left: 2vw;
         margin-bottom: -1.1vh;
         display: flex;
         flex-direction: row;
@@ -451,7 +444,7 @@
 
     .postText {
         margin-top: 0;
-        margin-left: 2vw;
+        margin-left: 3vw;
         margin-right: 2vw;
         margin-bottom: .5vh;
         font-family: Inter-Regular;
@@ -460,16 +453,21 @@
         color: #B9C1D6;
     }
 
-    .postFooter {
-        display: flex;
-        flex-direction: row;
-        border-radius: 0 0 .5vw .5vw;
+    .like-icon {
+        grid-area: span1;
     }
 
-    .postIcons {
-        margin-left: 1vw;
-        margin-bottom: -1vh;
-        width: 2vw;
+    .comment-icon {
+        grid-area: span2;
+    }
+
+    .post-btn-group {
+        grid-area: field;
+    }
+
+    .postFooter {
+        display: grid;
+        grid-template-areas: "span1 span1 . span2 span2 . . field . .";
     }
 
     .postIconsText {
@@ -577,6 +575,10 @@
     }
 
     #loginPage {
+        display: none;
+    }
+
+    #footer {
         display: none;
     }
 
@@ -710,8 +712,8 @@
 
     #postGrid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 8fr) minmax(0, 1fr);
-        width: 60vw;
+        grid-template-areas: ". cell";
+        width: 100vw;
         overflow: hidden;
     }
 
@@ -810,11 +812,9 @@
     #siteMenuLinks {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        width: 20vw;
-        height: 9.3vw;
+        justify-content: center;
+        align-items: flex-start;
         text-align: left;
-        text-indent: 5vw;
     }
 
     #newPost {

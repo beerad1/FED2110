@@ -118,11 +118,27 @@
 
         <!--This is the dashboard section-->
         <section id="dashPage">
+            <!--This is new post button that will follow the users scrolling in mobile view-->
             <div id="newPost">
-                <a href="" alt="Make New Post">
-                    <img id="newPostIcon" src="assets/New Post Icon.png" alt="Make New Post">
-                </a>
+                <input id="newPostIcon" type="image" src="assets/New Post Icon.png" alt="Make New Post">
             </div>
+
+            <!--This is the window thatpops up for the creation of anew post in mobile/editing a post in mobile-->
+            <div id="mobilePostBox">
+                <div id="mpbContent">
+                    <div class="pnhBundlePost">
+                        <div><span class="profImgPost"></span></div>
+                        <div id="nameHandle">
+                            <div class="pnhNameTextPost"></div>
+                            <div class="pnhHandTextPost"></div>
+                        </div>
+                    </div>
+                    <span id="close">&times;</span>
+                    <textarea type="text"></textarea>
+                </div>
+            </div>
+
+
             <!--This is the Top banner-->
             <section id="topBanner">     
                 <h1 id="dashLogo">Telmi</h1>

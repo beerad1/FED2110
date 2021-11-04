@@ -17,6 +17,10 @@ import { saveUser } from './Modules/users.js';
     $("#signupBtn").click(createUser);
     // When the user clicks the login button, the login user function is invoked and uses the saveUser function to apply currentUser to the current session.
     $("#loginBtn").click(() => loginUser(saveUser));
+    // This is the listener for when the user clicks the new post button on obile.
+    $("#newPostIcon").click(() => {
+        $("#mobilePostBox")[0].setAttribute("display", "flex");
+    });
     // Upon clicking the post buton, the contents of the textarea will be added to the firebase with the relevant post data and the posts will be reloaded without a page refresh.
     $("#postButton").click(() => createPost(displayPosts));
     // Executes the logoutUser function on click.

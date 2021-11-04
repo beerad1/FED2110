@@ -13,22 +13,31 @@ export function displayPosts(posts) {
         <section class="postCard">
             <div class="pnhBundlePost">
                 <div><span class="profImgPost"></span></div>
+                <div id="nameHandle">
+                    <!-- getUser is passed the userId the function displayUserOnPost, and the post id to be able to display the user's name, and their username on the post card. -->
 
-                <!-- getUser is passed the userId the function displayUserOnPost, and the post id to be able to display the user's name, and their username on the post card. -->
-
-                <h4 class="pnhNameTextPost" id="fullname${post.id}">${getUser(post.userId, displayUserOnPost, post.id)}</h4>
-                <p class="pnhHandTextPost" id="username${post.id}">${getUser(post.userId, displayUserOnPost, post.id)}</p>
+                    <h4 class="pnhNameTextPost" id="fullname${post.id}">${getUser(post.userId, displayUserOnPost, post.id)}</h4>
+                    <p class="pnhHandTextPost" id="username${post.id}">${getUser(post.userId, displayUserOnPost, post.id)}</p>
+                </div>
             </div>
             <div>
                 <p class="postText">${post.body}</p>
-                <p class="postText">${post.date}</p>
+                <p class="postText">${post.date.toLocaleString('en-US', {
+                    weekday: 'short',
+                    day: 'numeric',
+                    year: 'numeric',
+                    month: 'long',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric',
+                })}</p>
             </div>
             <div class="postFooter">
                 <span class="like-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#f5f5f5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/>Likes</svg>${post.likes}</span>
                 <span class="comment-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#f5f5f5"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 17.17L18.83 16H4V4h16v13.17zM20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z"/>Comments</svg>${post.comments}</span>
                 <fieldset class="post-btn-group" id=${post.id}>
-                    <button type="button" class="edit-btn">edit</button>
-                    <button type="button" class="delete-btn">delete</button>
+                    <input type="button" class="edit-btn" value="EDIT"></button>
+                    <input type="button" class="delete-btn" value="DELETE"></button>
                 </fieldset>
             </div>
         </section>              
@@ -50,11 +59,38 @@ export function displayPosts(posts) {
         // If statement confirms the click target is the edit button.
         if(event.target && event.target.matches(".edit-btn")) {
             // This searches for the closest parent above the edit button that is a fieldset tag, and identifies the postId from that tag's id.
-            const postId = event.target.closest("fieldset").id;
-            // If true, the function will be executed with the postId argument. Currently, it returns the postId to the console.
-            console.log(postId);
+            // const postId = event.target.closest("fieldset").id;
+            // If true, the function will be executed with the postId argument.
+            
+            // pop an edit window,
+            // and execute editpost with the contents on click of the post button
+
+            // establishes the 
+            const modal = document.getElementById("mobilePostBox");
+
+            // Get the <span> element that closes the modal
+            const span = document.getElementById("close");
+
+            // When the user clicks the button, open the modal 
+            modal.style.display = "block"
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+            modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            }
+
+            
+
+
             // This executes the post edit command in ajax
-            editPost();
+            // editPost(postId);
         }
     })
 }

@@ -16,7 +16,7 @@ export function loginUser(callback) {
         success: (response) => {
             // Sets $email to the value input through the email input tag.
             const $email = $("#loginEmail").val();
-            // Checks user for true or false, while preventing a null value in return using "!!". This was originally shoddy, but was fixed by the inclusion of hte "Object.values()" method to ensure that the data type matched the filter.
+            // Checks user for true or false, while preventing a null value in return using "!!". The "Object.values()" method ensures that the object data type matches the array.filter.
             const allUsers = Object.values(response).filter((user) => !!user);
             // Checks through all existing usernames, and verifies that the one entered exists.
             const email = allUsers.find(user => user.email === $email);
@@ -39,8 +39,11 @@ export function loginUser(callback) {
     })
 };
 
+// This exported function sets the CSS back to the home page, and clears the currentUser object.
 export function logoutUser() {
+    // Set CSS to Home
     $("#CSS")[0].setAttribute("href", "/CSS/Home.css");
+    // Clear currentUser
     currentUser = [currentUser];
 }
 
@@ -51,7 +54,7 @@ export function getPosts(callback = console.log) {
         url: `${baseUrl}posts${ext}`,
         // Declares the success through an arrow function using the response (res).
         success: (res) => {
-            // Creates variables keys using "object.keys()" to make an array of the names of all posts.
+            // Creates variable keys using "object.keys()" to make an array of the names of all posts.
             let keys = Object.keys(res);
             // Creates variable posts to map all properties of posts aside from the post name.
             let posts = keys.map(key => {
@@ -61,7 +64,7 @@ export function getPosts(callback = console.log) {
             // Performs same function as console.log(posts).
             callback(posts); 
         },
-        // Posts error to console.
+        // Outputs error to console.
         error: error => console.log(error) 
     })
 };
@@ -80,16 +83,20 @@ export function getUser(userId, callback = console.log, postId) {
     })
 };
 
-// This exported function allows the creation of new posts using the value of #new-post-text, and the currentUser.
+// This exported function allows the creation of new posts using the value of #new-post-area, and the currentUser.
 export function createPost(callback = console.log) {
-    // Uses guidGenerator to create uniqe id for the post object in firebase.
+    // Uses guidGenerator to create unique ids for the post object in firebase.
     const newId = guidGenerator();
+    // Create new date object with US format.
+    const date = new Date();
+    let dateUS = date.toLocaleString('en-US');
+    console.log(dateUS);
     // Creates the new post object.
     const newPost = {
-        // This declares that the new object will start as an empty object, and then be filled with the values from the textarea, the current date from Date(), currentUser.id, randomly generated like and comment amounts, and the newly generated guid.
+        // This declares that the new object will start as an empty object with it's id being the newId, and then be filled with the values from the textarea, the current date from Date(), currentUser.id, and randomly generated like and comment amounts.
         [newId]: {
             body: $("#new-post-area").val(),
-            date: new Date(),
+            date: dateUS,
             // Brings id from user object for the user that is currently logged in.
             userId: currentUser.id,
             likes: getRandomInt(1, 100),
@@ -107,7 +114,7 @@ export function createPost(callback = console.log) {
         // On success, the getPosts function is executed to display the new post without a refresh, so as to prevent the user from having to log back in.
         success: () => {
             getPosts(callback);
-            // This resets the textarea so a new post can be created without having to delete the old text.
+            // This resets the textarea.
             $("#new-post-area").val("");
         },
         // On fail, console.log the error.
@@ -115,31 +122,32 @@ export function createPost(callback = console.log) {
     })
 };
 
-// This exported function allows the creation of new posts using the value of #new-post-text, and the currentUser.
+// This exported function allows the creation of new usre objects.
 export function createUser() {
-    // This get will check teh provided new username against existing users, to ensure there are no duplicates created.
+    // This get will check the provided new email against existing users, to ensure there are no duplicates created.
     $.get({
         // Instantiates the url of the firebase users section.
         url: `${baseUrl}users${ext}`,
         // Declares the success through an arrow function using the response.
         success: (response) => {
-            // Sets each "$"variable to the corresponding input value.
+            // Sets each "$"variable to the corresponding input value for the name, username, and email. Password is on the html form, but is not considered at this time.
             const $newName = String($("#newFirstName").val() + " " + $("#newLastName").val());
             const $newUsername = $("#newUsername").val();
             const $newEmail = $("#newEmail").val();
-            // Checks user for true or false, while preventing a null value in return using "!!".
+            // Checks user for true or false, while preventing a null value in return using "!!". The "Object.values()" method ensures that the object data type matches the array.filter.
             const allUsers = Object.values(response).filter((user) => !!user);
             // Checks through all existing emails, and verifies that the one entered exists.
             const newEmail = allUsers.find(user => user.email === $newEmail);
-            
-            
-            // If/Else that displays in console whether the username AND email were found to exist, or not. The user must be unique and these will cause conflicts down the line.
-            if(newEmail == undefined) {
-                // Uses guidGenerator to create uniqe id for the post object in firebase.
+            // If the value of the newEmail is not undefined (i.e., a user already has that email) then an alert will notify the user that a different email must be used.  
+            if(newEmail || $newEmail == "" ) {
+                alert("The email address field is not complete, or this email address is already in use. Please enter a new email address.");
+            // Else that displays in console whether the newEmail is undefined, or not. The user must be unique, as duplicates will cause issues down the line.
+            }else{
+                // Uses guidGenerator to create unique id for the post object in firebase.
                 const newId = guidGenerator();
                 // Creates the new post object.
                 const newUser = {
-                    // This declares that the new object will start as an empty object, and then be filled with the values from the above "$" variables
+                    // This declares that the new object will start as an empty object, and then be filled with the values from the above "$" variables. Again, password is not considered at this point in time.
                     [newId]: {
                         email: $newEmail,
                         followers: getRandomInt(1000, 10000),
@@ -149,17 +157,18 @@ export function createUser() {
                         username: $newUsername
                     }
                 };
-                // Patches the new post to the firebase, using the firebase url for the posts section, and the stringified newPost object.
+                // Patches the new user to the firebase, using the firebase url for the users section, and the stringified newUser object.
                 $.ajax({
                     type: "PATCH",
-                    // Declares url from firebase to posts section.
+                    // Declares url from firebase to users section.
                     url: `${baseUrl}users${ext}`,
                     // Converts to a json string, that can be interpreted.
                     data: JSON.stringify(newUser),
-                    // On success, the getPosts function is executed to display the new post without a refresh, so as to prevent the user from having to log back in.
+                    // On success, the CSS changes to the Log In page, and ll values for the Sign Up page inputs are cleared.
                     success: () => {
+                        // Changes CSS to Log In.
                         $("#CSS")[0].setAttribute("href", "/CSS/Log In.css");
-                        // This resets the textarea so a new post can be created without having to delete the old text.
+                        // This resets the input areas for the Sign Up page.
                         $("#newFirstName").val("");
                         $("#newLastName").val("");
                         $("#newUsername").val("");
@@ -169,11 +178,8 @@ export function createUser() {
                     // On fail, console.log the error.
                     error: err => console.log(err)
                 })
-                
-            }else{
-                alert("This email address is already in use. Please enter a new email address.");
             }
-            
+        // On fail, console.log() the error.
         },
         error: err => console.log(err)
 
@@ -186,7 +192,7 @@ export function deletePost(postId) {
     $.ajax({
         // Declares Delete type HTTP method.
         type: "DELETE",
-        // Declares url from firebase to posts section, and thto the specific post by the postId.
+        // Declares url from firebase to posts section, and to the specific post by the postId.
         url: `${baseUrl}posts/${postId}${ext}`,
         // On success, the getPosts callback function is executed to displayPosts. Shows the newsfeed after deleting without a refresh, so as to prevent the user from having to log back in.
         success: () => {
@@ -197,13 +203,13 @@ export function deletePost(postId) {
     })
 };
 
-// This exported function allows for posts to be deleted from the firebase, and summarily from the newsfeed section.
+// This exported function allows for posts to be edited in the firebase, and summarily in the newsfeed section.
 export function editPost(postId) {
-    // This ajax call executes the delete request, of the targeted post based on the postId.
+    // This ajax call executes the edit request, of the targeted post based on the postId.
     $.ajax({
-        // Declares Delete type HTTP method.
-        type: "DELETE",
-        // Declares url from firebase to posts section, and thto the specific post by the postId.
+        // Declares PATCH type HTTP method.
+        type: "PATCH",
+        // Declares url from firebase to posts section, and to the specific post by the postId.
         url: `${baseUrl}posts/${postId}${ext}`,
         // On success, the getPosts callback function is executed to displayPosts. Shows the newsfeed after deleting without a refresh, so as to prevent the user from having to log back in.
         success: () => {

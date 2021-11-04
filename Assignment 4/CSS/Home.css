@@ -1,22 +1,4 @@
-    /*This is the standard layout for the class attributes below.
-        padding: ;
-        margin-top: ;
-        margin-bottom: ;
-        font-family: ;
-        display: ;
-        flex-direction: ;
-        justify-content: ;
-        align-items: ;
-        width: ;
-        height: ;
-        color: ;
-        text-align: ;
-        background: ;
-        background-color: ;
-        border: ;
-        src: ;
-    */   
-    
+ 
 @font-face {
     font-family: Inter-Regular;
     src: url('Inter/static/Inter-Regular.ttf')  format('truetype');
@@ -30,11 +12,6 @@
 @font-face {
     font-family: Inter-SemiBold;
     src: url('Inter/static/Inter-SemiBold.ttf')  format('truetype');
-}
-
-@font-face {
-    font-family: Inter-Bold;
-    src: url('Inter/static/Inter-Bold.ttf')  format('truetype');
 }
 
 @font-face {
@@ -54,17 +31,22 @@
         background-color: #355899;
     }
 
-    .buttonRightBanner {
-        padding: 0;
-        width: 75vw;
-        height: 12vh;
-        font-family: Inter-SemiBold;
-        font-size: 12vw;
-        color: #222222;
-        background-color: #4D82B4;
-        border: none;
+    #signupPage {
+        display: none;
     }
- 
+
+    #loginPage {
+        display: none;
+    }
+
+    #dashPage {
+        display: none;
+    }
+
+    #footer {
+        display: none;
+    }
+
     #homeLogo {
         padding: 0;
         margin: 0;
@@ -108,6 +90,17 @@
         text-align: center;
         background-color: #222222;
     }
+
+    #loginPageBtn {
+        padding: 0;
+        width: 75vw;
+        height: 12vh;
+        font-family: Inter-SemiBold;
+        font-size: 12vw;
+        color: #222222;
+        background-color: #4D82B4;
+        border: none;
+    }
  
     #middleSpacer {
         display: none;
@@ -123,6 +116,17 @@
         color: #222222;
         text-align: center;
         background-color: none;
+    }
+
+    #signupPageBtn {
+        padding: 0;
+        width: 75vw;
+        height: 12vh;
+        font-family: Inter-SemiBold;
+        font-size: 12vw;
+        color: #222222;
+        background-color: #4D82B4;
+        border: none;
     }
  
     #footer {
@@ -141,28 +145,6 @@
         padding: 0;
         margin: 0;
         background-color: #355899;
-    }
-
-    .buttonRightBanner {
-        padding: 0;
-        width: 25vw;
-        height: 8vh;
-        font-family: Inter-SemiBold;
-        font-size: 2vw;
-        color: #B9C1D6;
-        background-color: #222222;
-        border: none;
-    }
-
-    .buttonRightBanner:hover {
-        padding: 0;
-        width: 25vw;
-        height: 8vh;
-        font-family: Inter-SemiBold;
-        font-size: 2vw;
-        color: #222222;
-        background-color: #B9C1D6;
-        border: none;
     }
 
     .buttonFooter {
@@ -184,6 +166,18 @@
         text-decoration: underline;
         background: none;
         border: none;
+    }
+
+    #signupPage {
+        display: none;
+    }
+
+    #loginPage {
+        display: none;
+    }
+
+    #dashPage {
+        display: none;
     }
 
     #homeLogo {
@@ -231,6 +225,28 @@
         background-color: #222222;
     }
 
+    #loginPageBtn {
+        padding: 0;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #B9C1D6;
+        background-color: #222222;
+        border: none;
+    }
+
+    #loginPageBtn:hover {
+        padding: 0;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #222222;
+        background-color: #B9C1D6;
+        border: none;
+    }
+
     #middleSpacer {
         justify-content: center;
         width: 20vw;
@@ -251,6 +267,28 @@
         color: #222222;
         text-align: center;
         background-color: #4D82B4;
+    }
+
+    #signupPageBtn {
+        padding: 0;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #B9C1D6;
+        background-color: #222222;
+        border: none;
+    }
+
+    #signupPageBtn:hover {
+        padding: 0;
+        width: 25vw;
+        height: 8vh;
+        font-family: Inter-SemiBold;
+        font-size: 2vw;
+        color: #222222;
+        background-color: #B9C1D6;
+        border: none;
     }
 
     #footer {

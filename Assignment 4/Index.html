@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+        <link rel="stylesheet" id="CSS" href="/CSS/Home.css">
+
+</head>
+    <body>
+
+        <!--This is the home section-->
+        <section id="homePage">
+            <section id="mainSection">
+                
+                <!--This is the Left side banner-->
+                <div id="leftBanner">               
+                    <h1 id="homeLogo">Telmi</h1>
+                    <div id="dividerLine"></div>
+                    <h3 id="homeText">Sign up, <br> start scrolling.</h3>
+                </div>
+                <!--Middle space to keep banners seperate-->
+                <div id="middleSpacer">
+                </div>
+                <!--This is the Right side banner-->
+                <div id="rightBanner">                
+                    <input type="button" id="loginPageBtn" value="Log In">
+                    <input type="button" id="signupPageBtn" value="Sign Up">
+                </div>
+            </section>
+        </section>
+
+        <!--This is the signup section-->
+        <section id="signupPage">
+            <section id="mainSection">
+                <!--This is the Left side banner-->
+                <div id="topBanner"> 
+                    <h1 id="signupLogo">Telmi</h1>
+                    <div id="dividerLine"></div>
+                    <h3 id="signupText">Sign up, <br> start scrolling.</h3>
+                </div>
+                <!--This is the Right side banner-->
+                <div id="bottomBanner">
+                    <form action="">
+                        <div>
+                            <label for="fName">First Name</label>
+                            <br>
+                            <input id="newFirstName" type="text" name="firstName" placeholder="First Name*"> 
+                        </div>
+                        <div>
+                            <label for="lName">Last Name</label>
+                            <br>
+                            <input id="newLastName" type="text" name="lastName" placeholder="Last Name*">
+                        </div>
+                        <div>
+                            <label for="uName">Username</label>
+                            <br>
+                            <input id="newUsername" type="text" name="username" placeholder="Username*">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <br>
+                            <input id="newEmail" type="email" name="email" placeholder="Email*">
+                        </div>
+                        <div>
+                            <label for="password">Password</label>
+                            <br>
+                            <input id="newPassword" type="text" name="password" placeholder="Password*">
+                        </div>
+                    </form>
+                    <input type="submit" id="signupBtn" value="Sign Up">
+                </div>
+            </section>
+        </section>
+
+        <!--This is the login section-->
+        <section id="loginPage">
+            <section id="mainSection">
+                <!--This is the Left side banner-->
+                <div id="leftBanner">
+                    <h1 id="loginLogo">Telmi</h1>
+                    <div id="dividerLine"></div>
+                    <h3 id="loginText">Welcome back.</h3>
+                    <div id="leftBannerSpacer"></div>
+                </div>
+                <!--Middle space to keep banners seperate-->
+                <div id="middleSpacer">
+                </div>
+                <!--This section is just to help the right banner stay spaced to the right edge of the screen-->
+                <section id="middleSection">
+                    <div id="leftSpacer">
+                    </div>
+                    <!--This is the Right side banner-->
+                    <div id="rightBanner">
+                        <form action="">  
+                            <div>
+                                <label for="email">Email *</label>
+                                <br>
+                                <input id="loginEmail" type="email" name="email" placeholder="Email*">
+                            </div>
+                            <div>
+                                <label for="password">Password *</label>
+                                <br>
+                                <input id="loginPass" type="text" name="password" placeholder="Password*">
+                            </div>
+                        </form>
+                        <input type="submit" id="loginBtn" value="Log In">
+                        <input type="button" id="forgotBtn" value="Forgot Something?">
+                    </div>
+                </section>
+            </section>
+        </section>
+
+        <!--This is the dashboard section-->
+        <section id="dashPage">
+            <div id="newPost">
+                <img id="newPostIcon" src="assets/New Post Icon.png" alt="Make New Post">
+            </div>
+            <!--This is the Top banner-->
+            <section id="topBanner">     
+                <h1 id="dashLogo">Telmi</h1>
+                <div id="dividerLine"></div>
+                <h3 id="dashText"></h3>
+                <div id="topBannerSpacer"></div>
+                <div><span id="profImgTop"></span></div>
+            </section>
+            <!--This section container just makes sure the center sections stay oriented as a row-->
+            <section id="mainSection">
+                <!--This is the Left side banner-->
+                <section id="leftBanner">
+                    <!--This is the Profile Info section-->
+                    <section>
+                        <!--Prof/Name/Handle bundle-->
+                        <div id="pnhBundle">
+                            <div><span id="profImgLeft"></span></div>
+                            <div>
+                                <div id="pnhNameText"></div>
+                                <div id="pnhHandText"></div>
+                            </div>
+                        </div>
+                        <p id="locationHome" class="leftBannerText">Location not provided.</p>
+                        <p class="leftBannerText"><strong id="postsNumber">1432</strong> posts<strong id="followersNumber">, 88 </strong>followers<strong id="followingNumber"></strong>following</p>
+                    </section>
+                    <div class="dividerBanner"></div>
+                    <!--This is the Left Menu section-->
+                    <section id="leftMenu">
+                        <a href="Dashboard.html" alt="Telmi - Home">
+                            <input type="button" class="buttonLeftMenu" value="Home">
+                        </a>
+                        <a href="" alt="Telmi - Explore">
+                            <input type="button" class="buttonLeftMenu" value="Explore">
+                        </a>
+                        <a href="" alt="Telmi - Favorites">
+                            <input type="button" class="buttonLeftMenu" value="Favorites">
+                        </a>
+                        <a href="" alt="Telmi - Stats">
+                            <input type="button" class="buttonLeftMenu" value="Stats">
+                        </a>
+                        <a href="" alt="Telmi - Settings">
+                            <input type="button" class="buttonLeftMenu" value="Settings">
+                        </a>
+                    </section>
+                    <div class="dividerBanner"></div>
+                    <!--This is the Top Follows section-->
+                    <section>
+                        <p id="topFollowsText">Top Follows</p>
+                        <div id="followGrid">
+                            <div class="followCell"><span class="profImgFollow"></span></div>
+                            <div class="followCell">
+                                <div class="pnhNameTextFollow">Ed Rick</div>
+                            </div>
+                            <div class="followCell">
+                                <div class="pnhHandTextFollow">@E.Rick</div>
+                            </div>
+                            <div class="followCell"><span class="profImgFollow"></span></div>
+                            <div class="followCell">
+                                <div class="pnhNameTextReply">Mark Bot</div>
+                            </div>
+                            <div class="followCell">
+                                <div class="pnhHandTextReply">@M.Bot</div>
+                            </div>
+                            <div class="followCell"><span class="profImgFollow"></span></div>
+                            <div class="followCell">
+                                <div class="pnhNameTextReply">Jim Bo</div>
+                            </div>
+                            <div class="followCell">
+                                <div class="pnhHandTextReply">@J.Bo</div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <!--This is the Post section, using grid-->
+                <section id="postGrid">
+                    <div class="postCell"></div>
+                    <!--This is the Feed section-->
+                    <section class="postCell">
+                        <!--This is the new post section-->
+                        <div id="textPostField">
+                            <div class="pnhBundlePost">
+                                <div><span class="profImgPost"></span></div>
+                                <div class="pnhNameTextPost"></div>
+                                <div class="pnhHandTextPost"></div>
+                            </div>
+                            <textarea id="new-post-area" type="text" name="postField" placeholder="Telmi anything!" maxlength="200"></textarea>
+                            <input type="button" id="postButton" value="Telmi!">
+                        </div>
+                        <div id="dividerPost"></div>
+                        <!--This is the post feed-->
+                        <section id="textPostBlock">
+                            
+                        </section>
+                    </section>
+                    <div class="postCell"></div>
+                </section>
+                <!--This is the Right side banner-->
+                <section id="rightBanner">
+                    <!--This is the Reply section-->
+                    <section id="reply">
+                        <p id="replyText">Reply</p>
+                        <div id="replyGrid">
+                            <div class="replyCell"><span class="profImgReply"></span></div>
+                            <div class="replyCell">
+                                <div class="pnhNameTextReply">Ed Rick</div>
+                            </div>
+                            <div class="replyCell">
+                                <div class="pnhHandTextReply">@E.Rick</div>
+                            </div>
+                            <div class="replyCell"><span class="profImgReply"></span></div>
+                            <div class="replyCell">
+                                <div class="pnhNameTextReply">Mark Bot</div>
+                            </div>
+                            <div class="replyCell">
+                                <div class="pnhHandTextReply">@M.Bot</div>
+                            </div>
+                            <div class="replyCell"><span class="profImgReply"></span></div>
+                            <div class="replyCell">
+                                <div class="pnhNameTextReply">Jim Bo</div>
+                            </div>
+                            <div class="replyCell">
+                                <div class="pnhHandTextReply">@J.Bo</div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="dividerBanner"></div>
+                    <section id="trending">
+                        <p id="trendingText">Trending</p>
+                        <div id="trendingGrid">
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - FFXIV">
+                                    <input type="button" class="buttonTrending" value="FFXIV">
+                                </a>
+                            </div>
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - Cats">
+                                    <input type="button" class="buttonTrending" value="Cats">
+                                </a>
+                            </div>
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - Discord">
+                                    <input type="button" class="buttonTrending" value="Discord">
+                                </a>
+                            </div>
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - Steam">
+                                    <input type="button" class="buttonTrending" value="Steam">
+                                </a>
+                            </div>
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - Joji">
+                                    <input type="button" class="buttonTrending" value="Joji">
+                                </a>
+                            </div>
+
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - Gorillaz">
+                                    <input type="button" class="buttonTrending" value="Gorillaz">
+                                </a>
+                            </div>
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - Technology">
+                                    <input type="button" class="buttonTrending" value="Technology">
+                                </a>
+                            </div>
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - Health">
+                                    <input type="button" class="buttonTrending" value="Health">
+                                </a>
+                            </div>
+                            <div class="trendingCell">
+                                <a href="" alt="Trending - HTML/CSS">
+                                    <input type="button" class="buttonTrending" value="HTML/CSS">
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="dividerBanner"></div>
+                    <!--This is the Site Menu-->
+                    <section id="siteMenuLinks">
+                            <input type="button" class="buttonRightMenu" value="About">
+                            <input type="button" class="buttonRightMenu" value="Accessibility">
+                            <input type="button" class="buttonRightMenu" value="Customer Support">
+                            <input type="button" class="buttonRightMenu" value="Privacy of Terms">
+                            <input type="button" class="buttonRightMenu" value="Contact Us">
+                            <input type="button" class="buttonRightMenu logoutBtn" value="Logout">
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!--This is the footer section-->
+        <section id="footer">
+            <div id="footerLinks">                
+                <a href="" alt="Telmi - About">
+                    <input type="button" class="buttonFooter" value="About">
+                </a>
+                <a href="" alt="Telmi - Help Center">
+                    <input type="button" class="buttonFooter" value="Help Center">
+                </a>
+                <a href="" alt="Telmi - Terms of Service">
+                    <input type="button" class="buttonFooter" value="Terms of Service">
+                </a>
+                <a href="" alt="Telmi - Privacy Policy">
+                    <input type="button" class="buttonFooter" value="Privacy Policy">
+                </a>
+                <a href="" alt="Telmi - Cookie Policy">
+                    <input type="button" class="buttonFooter" value="Cookie Policy">
+                </a>
+                <a href="" alt="Telmi - Ads Info">
+                    <input type="button" class="buttonFooter" value="Ads Info">
+                </a>
+                <a href="" alt="Telmi - Blog">
+                    <input type="button" class="buttonFooter" value="Blog">
+                </a>
+                <a href="" alt="Telmi - Careers">
+                    <input type="button" class="buttonFooter" value="Careers">
+                </a>
+                <a href="" alt="Telmi - Advertising">
+                    <input type="button" class="buttonFooter" value="Advertising">
+                </a>
+                <a href="" alt="Telmi - Marketing">
+                    <input type="button" class="buttonFooter" value="Marketing">
+                </a>
+                <a href="" alt="Telmi - Developers">
+                    <input type="button" class="buttonFooter" value="Developers">
+                </a>
+                <a href="" alt="Telmi - Directory">
+                    <input type="button" class="buttonFooter" value="Directory">
+                </a>
+                <a href="" alt="Telmi - Settings">
+                    <input type="button" class="buttonFooter" value="Settings">
+                </a>
+            </div>
+            <div>(c) 2021, Telmi</div>
+        </section>
+            
+        <script type="module" src="main.js"></script>
+    
+    </body>
+</html>
